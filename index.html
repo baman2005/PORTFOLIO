@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Software Student — Portfolio</title>
+  <meta name="description" content="Portfolio of a software student showcasing projects, skills and contact info.">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#6ee7b7; /* mint */
+      --glass: rgba(255,255,255,0.04);
+      --radius:12px;
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+      background:linear-gradient(180deg,#071023 0%, var(--bg) 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px;
+    }
+
+    .container{max-width:1100px;margin:0 auto;}
+
+    header{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
+    }
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{
+      width:56px;height:56px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;font-weight:700;color:#052022;box-shadow:0 6px 18px rgba(6,17,28,0.6)
+    }
+    h1{margin:0;font-size:1.25rem}
+    .nav a{color:var(--muted);text-decoration:none;margin-left:20px;font-weight:600}
+    .nav a:hover{color:var(--accent)}
+
+    .hero{
+      display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:28px;
+    }
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:22px;box-shadow:0 6px 40px rgba(2,6,23,0.6)}
+
+    .intro h2{font-size:2rem;margin:0 0 6px}
+    .intro p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#052022;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .btn.secondary{background:transparent;color:var(--accent);border:1px solid rgba(109,213,178,0.12)}
+
+    .profile{display:flex;flex-direction:column;align-items:center;text-align:center}
+    .avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg,#0ea5a0,#60a5fa);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:700;color:#031018;margin-bottom:12px}
+    .tag{background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:600}
+
+    main{display:grid;grid-template-columns:1fr 320px;gap:28px;margin-top:18px}
+    section{min-height:120px}
+    .projects .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+
+    .project{padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.02)}
+    .project h3{margin:0 0 8px;font-size:1rem}
+    .project p{margin:0;color:var(--muted);font-size:0.92rem}
+    .project .meta{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;font-size:0.8rem;color:var(--muted)}
+
+    .skills ul{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px}
+    .skills li{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:8px 10px;border-radius:10px;color:var(--muted);font-weight:600}
+
+    .about p{color:var(--muted)}
+
+    .contact .row{display:flex;gap:12px;margin-bottom:10px}
+    .field{flex:1;padding:10px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:inherit}
+    .field::placeholder{color:rgba(255,255,255,0.35)}
+    .submit{width:100%;padding:10px;border-radius:10px;border:0;background:var(--accent);color:#052022;font-weight:700}
+
+    footer{margin-top:28px;color:var(--muted);font-size:0.9rem;display:flex;justify-content:space-between;align-items:center}
+
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      main{grid-template-columns:1fr}
+      .projects .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">K</div>
+        <div>
+          <h1>KAPTAN</h1>
+          <div style="font-size:0.85rem;color:var(--muted)">Software Student • Web · Mobile · APIs</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card intro">
+        <h2>Hi — I'm KAPTAN, a software student building useful apps.</h2>
+        <p>I focus on full‑stack web development, mobile apps with Flutter, and clean APIs. Currently learning distributed systems and Rust.</p>
+        <div class="cta">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn secondary" href="#contact">Get in touch</a>
+        </div>
+
+        <div style="margin-top:20px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+          <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center;min-width:180px">
+            <div style="font-weight:700;font-size:1.15rem">4</div>
+            <div>
+              <div style="font-weight:700">Projects</div>
+              <div style="color:var(--muted);font-size:0.9rem">Personal + coursework</div>
+            </div>
+          </div>
+
+          <div class="card" style="padding:12px;display:flex;gap:12px;align-items:center;min-width:180px">
+            <div style="font-weight:700;font-size:1.15rem">Intern</div>
+            <div>
+              <div style="font-weight:700">Open to internships</div>
+              <div style="color:var(--muted);font-size:0.9rem">Remote / on-site</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card profile">
+        <div class="avatar">K</div>
+        <div style="font-weight:700">KAPTAN</div>
+        <div class="tag" style="margin-top:8px">Computer Science · Class of 2026</div>
+        <div style="margin-top:12px;color:var(--muted);font-size:0.95rem">Looking for internships in backend or mobile engineering. Open to contract work.</div>
+      </aside>
+    </section>
+
+    <main>
+      <section class="card projects" id="projects">
+        <h3 style="margin-top:0">Selected Projects</h3>
+        <div class="grid">
+          <article class="project">
+            <h3>TaskFlow — Collaborative To-do App</h3>
+            <p>A full-stack web app with real-time updates, user auth and role-based permissions. Built with React, Node.js, Socket.IO and PostgreSQL.</p>
+            <div class="meta">
+              <div class="chip">React</div>
+              <div class="chip">Node.js</div>
+              <div class="chip">Socket.IO</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>StudyBuddy — Android & iOS</h3>
+            <p>Cross-platform mobile app using Flutter. Features flashcards, spaced repetition and offline sync.</p>
+            <div class="meta">
+              <div class="chip">Flutter</div>
+              <div class="chip">Dart</div>
+              <div class="chip">Firebase</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>API Vault — Secure API Manager</h3>
+            <p>Small HTTP API that manages API keys, rate limits and metrics. Includes a simple admin dashboard.</p>
+            <div class="meta">
+              <div class="chip">Express</div>
+              <div class="chip">Docker</div>
+              <div class="chip">Postgres</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <h3>DataViz — Course Project</h3>
+            <p>Interactive data visualizations using D3.js to explore university enrollment trends.</p>
+            <div class="meta">
+              <div class="chip">D3</div>
+              <div class="chip">Vanilla JS</div>
+              <div class="chip">CSV</div>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top:16px;color:var(--muted);font-size:0.95rem">Want to see code? Link to GitHub and live demos are easy to add — tell me your GitHub and I’ll wire them in.</div>
+      </section>
+
+      <aside class="card">
+        <section id="skills">
+          <h3 style="margin-top:0">Skills</h3>
+          <div class="skills" style="margin-top:8px">
+            <ul>
+              <li>JavaScript / TypeScript</li>
+              <li>React / Next.js</li>
+              <li>Node.js / Express</li>
+              <li>Flutter / Dart</li>
+              <li>SQL / Postgres</li>
+              <li>Docker / Git</li>
+            </ul>
+          </div>
+        </section>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:14px 0">
+
+        <section class="about">
+          <h4 style="margin:0 0 8px">About</h4>
+          <p>I'm a 4TH‑year CS student who loves building things that help people learn and collaborate. I enjoy working on small teams and shipping features end‑to‑end.</p>
+        </section>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:14px 0">
+
+        <section id="contact" class="contact">
+          <h4 style="margin:0 0 8px">Contact</h4>
+          <div style="color:var(--muted);font-size:0.95rem;margin-bottom:8px">Email: <strong>Kaptanbamaniya@gmail.com</strong></div>
+          <form onsubmit="event.preventDefault();alert('This is a demo form — replace with your backend or mailto link.')">
+            <div class="row">
+              <input class="field" placeholder="KAPTAN" required>
+              <input class="field" placeholder="Kaptanbamaniya@gmail.com" required>
+            </div>
+            <textarea class="field" rows="4" placeholder="Message"></textarea>
+            <div style="margin-top:10px"><button class="submit">Send message</button></div>
+          </form>
+        </section>
+      </aside>
+    </main>
+
+    <footer>
+      <div>© KAPTAN — Software Student</div>
+      <div style="color:var(--muted)">Made with ❤️ • <a href="#" style="color:var(--muted);text-decoration:underline">Download CV</a></div>
+<footer>
+  <div>© KAPTAN — Software Student</div>
+  <div style="color:var(--muted)">
+    Made with ❤️ • 
+    <a href="resume.pdf" target="_blank" style="color:var(--muted);text-decoration:underline">
+      Download CV
+    </a>
+  </div>
+</footer>
+   
+ </footer>
+  </div>
+</body>
+</html>
